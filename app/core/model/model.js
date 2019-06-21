@@ -1,33 +1,27 @@
 angular.module('Model')
-  .factory('model', function($http, $q, $rootScope, $resource) {
+  .factory('model', function($http, BackendConfig) {
 
     const request = (method, model, action, params) => {
-
       let path = full_path(model, action, params);
-
       let request_params = {};
-
       if (params !== undefined && params.data) {
         request_params = {
           data: params.data
         };
       }
-
       return $http[method](path, request_params);
     }
 
     const full_path = (model, action, params) => {
-      let path = `http://localhost/workspace/challengeEmployees/server/${model}/${action}`;
-      //let path = `${globalApp.base_url}/${model}/${action}`;
-
+      console.log(BackendConfig.url)
+      //let path = `http://localhost/workspace/challengeEmployees/server/${model}/${action}`;
+      let path = `${BackendConfig.url}/${model}/${action}`;
       if (params !== undefined && params.url_params) {
         Object.values(params.url_params).each(param => {
           path += `/${param}`;
         });
       }
-
       path += document.location.search;
-
       return path;
     }
 
