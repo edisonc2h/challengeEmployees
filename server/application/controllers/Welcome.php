@@ -6,24 +6,22 @@ require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/Format.php';
 
 class Welcome extends REST_Controller {
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Employees_model');
+		$this->load->helper('url_helper');
+	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index_get()
 	{
-		$this->set_response(array('data' => "Demo"), REST_Controller::HTTP_OK);
+		$this->set_response(array('data' => "asdsadsad"), REST_Controller::HTTP_OK);
+	}
+
+	public function empleados_get()
+	{
+		$empleados = $this->Employees_model->get_empleados();
+		$this->response($empleados, REST_Controller::HTTP_OK);
 	}
 }
