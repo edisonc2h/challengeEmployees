@@ -1,7 +1,11 @@
 <?php
+use Restserver\Libraries\REST_Controller;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+require APPPATH . 'libraries/REST_Controller.php';
+require APPPATH . 'libraries/Format.php';
+
+class Welcome extends REST_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,8 +22,8 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index_get()
 	{
-		$this->load->view('welcome_message');
+		$this->set_response(array('data' => "Demo"), REST_Controller::HTTP_OK);
 	}
 }
