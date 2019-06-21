@@ -1,0 +1,23 @@
+{
+  "name": "challengeemployees",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edisonc2h/challengeEmployees.git"
+  },
+  "author": "Edison Calderon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edisonc2h/challengeEmployees/issues"
+  },
+  "homepage": "https://github.com/edisonc2h/challengeEmployees#readme",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "bootstrap": "^4.3.1"
+  }
+}
