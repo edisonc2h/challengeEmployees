@@ -1,23 +1,22 @@
 {
-  "name": "challengeemployees",
+  "name": "client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edisonc2h/challengeEmployees.git"
-  },
-  "author": "Edison Calderon",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edisonc2h/challengeEmployees/issues"
-  },
-  "homepage": "https://github.com/edisonc2h/challengeEmployees#readme",
   "dependencies": {
     "angular": "^1.7.8",
-    "bootstrap": "^4.3.1"
+    "angular-animate": "^1.7.8",
+    "angular-resource": "^1.7.8",
+    "angular-route": "^1.7.8",
+    "angular-sanitize": "^1.7.8",
+    "angular-ui-bootstrap": "^2.5.6",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0"
   }
 }

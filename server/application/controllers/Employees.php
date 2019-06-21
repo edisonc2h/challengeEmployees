@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/Format.php';
 
-class Welcome extends REST_Controller {
+class Employees extends REST_Controller {
 	
 	public function __construct()
 	{
@@ -14,12 +14,7 @@ class Welcome extends REST_Controller {
 		$this->load->helper('url_helper');
 	}
 
-	public function index_get()
-	{
-		$this->set_response(array('data' => "asdsadsad"), REST_Controller::HTTP_OK);
-	}
-
-	public function empleados_get()
+	public function list_get()
 	{
 		$empleados = $this->Employees_model->get_empleados();
 		$this->response($empleados, REST_Controller::HTTP_OK);
