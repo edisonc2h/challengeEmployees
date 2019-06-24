@@ -5,5 +5,6 @@ angular
     'ngResource',
     'ngRoute',
     'ui.bootstrap',
-    'Core'
+    'Core',
+    'Directives'
   ]);

@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="./css/sb-admin-2.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this page -->
-  <link href="./js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="./js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body ng-app="App">
@@ -116,7 +116,7 @@
   <!-- End of Page Wrapper -->
 
 
-  <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="./js/sb-admin-2.js"></script>
   <!-- Page level plugins -->
@@ -137,7 +137,15 @@
   <script src="./app/core/model/module.js"></script>
   <script src="./app/core/model/model.js"></script>
   <script src="./app/core/constants/BackendConfig.js"></script>
+
+  <!--DIRECTIVES-->
+  <script src="./app/directives/module.js"></script>
+  <script src="./app/directives/form_validation/validation.js"></script>
+  <script src="./app/directives/form_validation/validate_form.js"></script>
+  <script src="./app/directives/form_validation/is_required.js"></script>
+
   <script src="./app/app.module.js"></script>
+
   <!--MODULES-->
   <script src="./app/employees/routes/routes.js"></script>
   <script src="./app/employees/employees_model.js"></script>

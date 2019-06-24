@@ -13,7 +13,6 @@ angular.module('Model')
     }
 
     const full_path = (model, action, params) => {
-      console.log(BackendConfig.url)
       //let path = `http://localhost/workspace/challengeEmployees/server/${model}/${action}`;
       let path = `${BackendConfig.url}/${model}/${action}`;
       if (params !== undefined && params.url_params) {
