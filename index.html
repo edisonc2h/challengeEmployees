@@ -14,6 +14,7 @@
   <link href="./css/sb-admin-2.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this page -->
   <link href="./js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+  <link href="./node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body ng-app="App">
@@ -49,28 +50,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Employees</span>
+          <span>Empleados</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Options:</h6>
-            <a class="collapse-item" href="#!list">Register</a>
-            <a class="collapse-item" href="#!report">Report</a>
-            <a class="collapse-item" href="tables.html">Tabla</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Provinces</a>
+            <h6 class="collapse-header">Opciones:</h6>
+            <a class="collapse-item" href="#!list">Registrar</a>
+            <a class="collapse-item" href="#!report">Reporte</a>
           </div>
         </div>
       </li>
@@ -79,9 +65,9 @@
       <hr class="sidebar-divider d-none d-md-block">
 
       <li class="nav-item">
-        <a class="nav-link" href="credits.html">
+        <a class="nav-link" href="#!credits">
           <i class="fas fa-laugh-wink"></i>
-          <span>Credits</span></a>
+          <span>Creditos</span></a>
       </li>
 
       <hr class="sidebar-divider d-none d-md-block">
@@ -132,6 +118,7 @@
   <script src="./node_modules/angular-resource/angular-resource.min.js"></script>
   <script src="./node_modules/angular-route/angular-route.min.js"></script>
   <script src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
   <script src="./app/core/module.js"></script>
   <script src="./app/core/model/module.js"></script>
@@ -153,6 +140,7 @@
   <script src="./app/employees/controllers/report.controller.js"></script>
   <script src="./app/employees/controllers/new.controller.js"></script>
   <script src="./app/employees/controllers/list.controller.js"></script>
-
+  <script src="./app/employees/controllers/credits.controller.js"></script>
+  <script src="./app/employees/controllers/edit.controller.js"></script>
 </body>
 </html>

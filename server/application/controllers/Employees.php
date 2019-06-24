@@ -16,8 +16,15 @@ class Employees extends REST_Controller {
 
 	public function list_get()
 	{
+		$this->load->model('Status_model');
 		$empleados = $this->Employees_model->get_empleados();
-		$this->response($empleados, REST_Controller::HTTP_OK);
+		$listado = array();
+		foreach ($empleados as $key => $empleado) {
+			$status = $this->Status_model->get_status($empleado['status']);
+			$empleado['name_status'] = $status['description'];
+			$listado[] = $empleado;
+		}
+		$this->response($listado, REST_Controller::HTTP_OK);
 	}
 
 	public function provincias_get()
@@ -31,7 +38,38 @@ class Employees extends REST_Controller {
 	{
 		$data = $this->post();
 		$data_employee = $data['data']['employee'];
-		var_dump($data_employee);
+		$result =  $this->Employees_model->insert_new($data_employee);
+		$this->response($result, REST_Controller::HTTP_OK);
+	}
 
+	public function find_employee_post()
+	{
+		$this->load->model('Status_model');
+		$data = $this->post();
+		$buscar = $data['data']['buscar'];
+		$empleados = $this->Employees_model->find($buscar);
+		$listado = array();
+		foreach ($empleados as $key => $empleado) {
+			$status = $this->Status_model->get_status($empleado['status']);
+			$empleado['name_status'] = $status['description'];
+			$listado[] = $empleado;
+		}
+		$this->response($listado, REST_Controller::HTTP_OK);
+	}
+
+	public function employee_by_id_post()
+	{
+		$data = $this->post();
+		$id = $data['data']['id'];
+		$employee = $this->Employees_model->employee_by_id($id);
+		$this->response($employee, REST_Controller::HTTP_OK);
+	}
+
+	public function edit_employee_post()
+	{
+		$data = $this->post();
+		$data_employee = $data['data']['employee'];
+		$result = $this->Employees_model->edit_employee($data_employee);
+		$this->response($result, REST_Controller::HTTP_OK);
 	}
 }

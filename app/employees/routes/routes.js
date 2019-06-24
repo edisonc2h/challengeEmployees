@@ -13,5 +13,14 @@ angular.module("App")
       }).when("/list", {
         templateUrl: "./app/employees/views/list.html",
         controller: "list",
+      }).when("/credits", {
+        templateUrl: "./app/employees/views/credits.html",
+        controller: "credits",
+      }).when("/edit_employee/:_id", {
+        templateUrl: "./app/employees/views/edit.html",
+        controller: "edit"
       });
-  })
+  });
+
+
+  /**/

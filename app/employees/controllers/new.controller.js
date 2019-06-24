@@ -18,13 +18,12 @@ angular.module("App")
     labor_observation: ''
   };
 	$scope.provincias = [];
-    employees_model.get('provincias')
-    .then(function(res) {
-        $scope.provincias = res.data;
-      });
+  employees_model.get('provincias')
+  .then(function(res) {
+      $scope.provincias = res.data;
+    });
   
   $scope.ingresar = function(){
-    console.log($scope.employee)
     var params ={
       data: {
         employee: $scope.employee
@@ -32,6 +31,24 @@ angular.module("App")
     }
     employees_model.post('new_employee', params)
     .then(function(res) {
+      console.log(res)
+      if(res.status == 200){
+        Swal.fire({
+          position: 'top-end',
+          type: 'success',
+          title: 'Empleado ingresado con exito',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        $location.path('/list');
+      } else {
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Algo Salio Mal!',
+          footer: 'Hubo un error al guardar al empleado'
+        })
+      }
       });
   }
 	
