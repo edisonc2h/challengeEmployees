@@ -1,1 +1,53 @@
-<h1>LIST EMPLEADOS</h1>
+  <div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-12 col-lg-12 col-md-12">
+            <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Listado</h1>
+        </div>
+            <!-- Nested Row within Card Body -->
+              <form class="needs-validation" novalidate="">
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control" placeholder="Nombre">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control" placeholder="Codigo">
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <button class="btn btn-primary btn-sm" type="button">Buscar</button>
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <button class="btn btn-success btn-sm" type="button" ng-click="ingresar()">Ingresar</button>
+                  </div>
+                </div>
+              </form>
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="row">
+              <table class="table table-sm table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">C&eacute;dula</th>
+                  <th scope="col">Cargo</th>
+                  <th scope="col">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="employee in employees">
+                  <th>1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>

@@ -1,5 +1,5 @@
 <?php
-class Employees_model extends CI_Model {
+class Provinces_model extends CI_Model {
 
     public function __construct()
     {
@@ -7,10 +7,10 @@ class Employees_model extends CI_Model {
         $this->load->database();
     }
 
-    public function get_empleados()
+    public function get_provinces()
     {
         $this->db->limit(10);
-        $query = $this->db->get('employees');
+        $query = $this->db->get('provincia');
         return $query->result_array();
     }
 }

@@ -19,4 +19,11 @@ class Employees extends REST_Controller {
 		$empleados = $this->Employees_model->get_empleados();
 		$this->response($empleados, REST_Controller::HTTP_OK);
 	}
+
+	public function provincias_get()
+	{
+		$this->load->model('Provinces_model');
+		$list = $this->Provinces_model->get_provinces();
+		$this->response($list, REST_Controller::HTTP_OK);
+	}
 }

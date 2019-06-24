@@ -1,0 +1,2 @@
+rsync -avz -e 'ssh -p 2262' * proved@66.70.172.80:/var/www/html/test/test_diego_lema/
+
