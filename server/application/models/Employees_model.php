@@ -97,5 +97,12 @@ class Employees_model extends CI_Model {
         $this->db->where('id', $employee['id']);
         return $this->db->update('employees', $data);
     }
+
+    public function remove_employee($id)
+    {
+        $this->db->where('id', $id);
+        $result = $this->db->delete('employees');
+        return $result;
+    }
 }
 ?>

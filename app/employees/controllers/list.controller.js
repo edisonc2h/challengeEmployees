@@ -36,5 +36,47 @@ angular.module("App")
       }
       });
   }
+
+  $scope.delete_employee = function(employee){
+    console.log(employee)
+    Swal.fire({
+    title: 'Eliminar?',
+    text: "Confirmar accion!",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Eliminar!'
+  }).then((result) => {
+    if (result.value) {
+
+      var params ={
+      url_params: {
+        id: employee.id
+      }
+    }
+    employees_model.remove('remove_employee', params)
+    .then(function(res) {
+      console.log(res)
+      if(res.status == 200){
+        Swal.fire(
+          'Eliminado!',
+          'Empleado eliminado.',
+          'success'
+        )
+        $route.reload();
+      }  else {
+          Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Algo Salio Mal!',
+            footer: 'Hubo un error al guardar al empleado'
+          })
+        }
+      });
+
+    }
+  })
+  }
 	
   });

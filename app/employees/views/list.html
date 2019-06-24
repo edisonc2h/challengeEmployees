@@ -32,14 +32,18 @@
                   <th scope="col">C&eacute;dula</th>
                   <th scope="col">Cargo</th>
                   <th scope="col">Estado</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="employee in employees" ng-click="edit_employee(employee)">
-                  <th>{{employee.names + ' '+ employee.surnames}}</th>
-                  <td>{{employee.personal_identification}}</td>
-                  <td>{{employee.position}}</td>
-                  <td>{{employee.name_status}}</td>
+                <tr ng-repeat="employee in employees">
+                  <th ng-click="edit_employee(employee)">{{employee.names + ' '+ employee.surnames}}</th>
+                  <td ng-click="edit_employee(employee)">{{employee.personal_identification}}</td>
+                  <td ng-click="edit_employee(employee)">{{employee.position}}</td>
+                  <td ng-click="edit_employee(employee)">{{employee.name_status}}</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-danger" ng-click="delete_employee(employee)"><i class="fas fa-trash-alt"></i> </button>
+                  </td>
                 </tr>
               </tbody>
             </table>

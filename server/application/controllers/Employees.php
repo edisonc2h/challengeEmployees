@@ -72,4 +72,10 @@ class Employees extends REST_Controller {
 		$result = $this->Employees_model->edit_employee($data_employee);
 		$this->response($result, REST_Controller::HTTP_OK);
 	}
+	
+	public function remove_employee_delete($id)
+	{
+		$result = $this->Employees_model->remove_employee($id);
+		$this->response($result, REST_Controller::HTTP_OK);
+	}
 }
