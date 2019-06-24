@@ -9,6 +9,8 @@
 
   angular.module('Core')
     .constant('BackendConfig', {
-      url: 'http://66.70.172.80/test/edison_calderon/server'
+      url: 'http://localhost/workspace/challengeEmployees/server'
     });
 }());
+
+//url: 'http://66.70.172.80/test/edison_calderon/server'
