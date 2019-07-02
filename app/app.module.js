@@ -6,5 +6,6 @@ angular
     'ngRoute',
     'ui.bootstrap',
     'Core',
-    'Directives'
+    'Directives',
+    'ngTable'
   ]);

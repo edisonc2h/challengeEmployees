@@ -1,8 +1,8 @@
 angular.module("App")
-  .controller("report", function($scope, $route, $location, employees_model) {
-    $scope.employees = [];
+  .controller("report", function($scope, $route, $location, employees_model, NgTableParams) {
     employees_model.get('list')
     .then(function(res) {
-      $scope.employees = res.data;
+      	$scope.employeesTable = new NgTableParams({}, { dataset: res.data });
       });
+
   });
