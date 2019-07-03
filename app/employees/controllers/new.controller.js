@@ -5,11 +5,11 @@ angular.module("App")
     surnames: '',
     personal_identification: '',
     id_province: '',
-    birth_date: '',
+    birth_date: new Date(),
     email: '',
     observation: '',
     image: '',
-    start_date: '',
+    start_date: new Date(),
     position: '',
     department: '',
     id_working_province: '',
@@ -24,6 +24,8 @@ angular.module("App")
     });
   
   $scope.ingresar = function(){
+    $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-MM-DD');
+    $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-MM-DD');
     var params ={
       data: {
         employee: $scope.employee

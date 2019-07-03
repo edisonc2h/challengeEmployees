@@ -11,6 +11,10 @@ angular.module("App")
     .then(function(res) {
           $scope.employee = res.data;
           $scope.employee.salary = parseFloat($scope.employee.salary);
+          var birth_date = moment($scope.employee.birth_date).format('DD-MM-YYYY');
+          $scope.employee.birth_date = new Date(birth_date);
+          var start_date = moment($scope.employee.start_date).format('DD-MM-YYYY');
+          $scope.employee.start_date = new Date(start_date);
     });
 
     $scope.provincias = [];
@@ -20,6 +24,8 @@ angular.module("App")
     });
 
     $scope.ingresar = function(){
+      $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-MM-DD');
+      $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-MM-DD');
         var params ={
           data: {
             employee: $scope.employee

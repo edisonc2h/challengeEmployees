@@ -61,10 +61,17 @@
                     </div>
                     <div class="col-md-6 mb-3">
                       <label for="email">Email <span class="text-muted">(Valida)</span></label>
-                      <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" ng-model="employee.email">
-                      <div class="invalid-feedback">
-                        Please enter a valid email address for shipping updates.
-                      </div>
+                      <input 
+                        type="email" 
+                        class="form-control" 
+                        name="email" 
+                        id="email" 
+                        placeholder="you@example.com" 
+                        ng-model="employee.email"
+                        email 
+                        required 
+                        validation
+                        >
                     </div>
                   </div>
         
@@ -79,9 +86,7 @@
                     <div class="col-md-6 mb-3">
                       <label for="imagen">Fotograf&iacute;a </label>
                       <input type="file" class="form-control" id="imagen" placeholder="" ng-model="employee.image">
-                      <div class="invalid-feedback">
-                        Please enter a valid email address for shipping updates.
-                      </div>
+                      
                     </div>
                   </div>
             </div>
@@ -100,9 +105,6 @@
                   <div class="col-md-6 mb-3">
                     <label for="cargo">Cargo</label>
                     <input type="text" class="form-control" required validation id="cargo" name="cargo" placeholder="" ng-model="employee.position">
-                    <div class="invalid-feedback">
-                      Please enter a valid email address for shipping updates.
-                    </div>
                   </div>
                 </div>
                 <div class="row">
