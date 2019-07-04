@@ -57,7 +57,6 @@ angular.module("App")
     }
     employees_model.remove('remove_employee', params)
     .then(function(res) {
-      console.log(res)
       if(res.status == 200){
         Swal.fire(
           'Eliminado!',

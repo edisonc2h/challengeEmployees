@@ -104,5 +104,19 @@ class Employees_model extends CI_Model {
         $result = $this->db->delete('employees');
         return $result;
     }
+
+    public function validar_identificacion($identificacion)
+    {
+        $query = $this->db->select('personal_identification');
+        $query = $this->db->where('personal_identification', $identificacion);
+        $query = $this->db->get('employees');
+        $data =  $query->row_array();
+        if (sizeof($data) > 0){
+            return true;
+        }
+        return false;
+    }
+
+    
 }
 ?>

@@ -78,4 +78,10 @@ class Employees extends REST_Controller {
 		$result = $this->Employees_model->remove_employee($id);
 		$this->response($result, REST_Controller::HTTP_OK);
 	}
+
+	public function validar_identificacion_get($cedula)
+	{
+		$result = $this->Employees_model->validar_identificacion($cedula);
+		$this->response($result, REST_Controller::HTTP_OK);
+	}
 }

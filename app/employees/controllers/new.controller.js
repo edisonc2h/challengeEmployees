@@ -1,5 +1,5 @@
 angular.module("App")
-  .controller("new_employee", function($scope, $route, $location, employees_model) {
+  .controller("new_employee", function($scope, $route, $location, employees_model, BackendConfig) {
 	$scope.employee = {
     names: '',
     surnames: '',
@@ -51,6 +51,29 @@ angular.module("App")
         })
       }
       });
+  }
+
+   $scope.validar_si_existe_identificacion = function($cedula) {
+      let url = `${BackendConfig.url}/Employees/validar_identificacion/${$cedula}`;
+      return fetch(url, {
+              method: 'GET',
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          })
+          .then(function(res) {
+              return res.json();
+          })
+          .then(function(data) {
+              if (data){
+                $scope.employee.personal_identification = '';
+                Swal.fire({
+                  type: 'error',
+                  title: 'Oops...',
+                  text: 'Cedula ya existe!',
+                })
+              }
+          });
   }
 	
   });

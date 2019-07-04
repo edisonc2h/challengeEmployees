@@ -33,7 +33,17 @@
         <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cedula">C&eacute;dula</label>
-              <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required validation ng-model="employee.personal_identification">
+              <input 
+                type="text" 
+                class="form-control" 
+                name="cedula" 
+                id="cedula" 
+                placeholder="" 
+                required 
+                validation 
+                ng-model="employee.personal_identification"
+                ng-blur="validar_si_existe_identificacion(employee.personal_identification)"
+                >
             </div>
 
             <div class="col-md-6 mb-3">
