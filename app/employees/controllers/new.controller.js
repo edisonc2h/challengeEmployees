@@ -54,6 +54,9 @@ angular.module("App")
   }
 
    $scope.validar_si_existe_identificacion = function($cedula) {
+     if (!$cedula){
+       return;
+     }
       let url = `${BackendConfig.url}/Employees/validar_identificacion/${$cedula}`;
       return fetch(url, {
               method: 'GET',

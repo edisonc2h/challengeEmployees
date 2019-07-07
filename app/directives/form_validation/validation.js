@@ -12,6 +12,7 @@
 					required: 'Campo requerido!',
 					number: ' El valor debe ser númerico!',
 					email: ' Debe ser un email válido!',
+					invalid_email: ' Debe ser un email válido!',
 					minlength: get_ming_lenght_error(),
 					maxlength: get_max_lenght_error(),
 					min: get_ming_error(),
@@ -72,7 +73,6 @@
 							element.parent().append(help_block);
 						}
 
-						//help_block.text($filter('translate')(get_validation_message()));
 						help_block.text(get_validation_message());
 						help_block.show();
 
@@ -92,17 +92,16 @@
 
 					var error_message = '';
 					var errors = scope.$eval(form_name + '.' + attribute_name + '.$error');
-
-					/*_(errors).each(function(invalid, error) {
-						if (invalid && errors_messages[error]) {
-							if (error_message !== '') {
-								error_message += ', ';
-							}
-							error_message += errors_messages[error];
-						}
-					});*/
 					if (errors.required){
 						error_message += errors_messages['required'];
+					}
+
+					if (errors.invalid_email){
+						error_message += errors_messages['invalid_email'];
+					}
+
+					if (errors.invalid_id_card){
+						error_message += errors_messages['invalid_id_card'];
 					}
 
 					return error_message;

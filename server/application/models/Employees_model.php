@@ -109,9 +109,8 @@ class Employees_model extends CI_Model {
     {
         $query = $this->db->select('personal_identification');
         $query = $this->db->where('personal_identification', $identificacion);
-        $query = $this->db->get('employees');
-        $data =  $query->row_array();
-        if (sizeof($data) > 0){
+        $query = $this->db->get('employees')->row_array();
+        if ($query !== NULL){
             return true;
         }
         return false;

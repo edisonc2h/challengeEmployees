@@ -35,9 +35,11 @@
               <label for="cedula">C&eacute;dula</label>
               <input 
                 type="text" 
-                class="form-control" 
+                class="form-control input-sm" 
                 name="cedula" 
-                id="cedula" 
+                id="cedula"
+                maxlength="13"
+                id-Card
                 placeholder="" 
                 required 
                 validation 
@@ -67,13 +69,13 @@
               <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="" ng-model="employee.birth_date">
             </div>
             <div class="col-md-6 mb-3">
-              <label for="email Empleado">Email <span class="text-muted">(Valida)</span></label>
+              <label for="email">Email</label>
               <input 
-                type="email" 
-                class="form-control" 
+                type="text" 
+                class="form-control input-sm" 
                 name="email" 
                 id="email" 
-                email 
+                is-email 
                 required 
                 validation 
                 placeholder="you@example.com" 

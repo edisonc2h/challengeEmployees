@@ -7,5 +7,6 @@ angular
     'ui.bootstrap',
     'Core',
     'Directives',
-    'ngTable'
+    'ngTable',
+    'Utils'
   ]);
