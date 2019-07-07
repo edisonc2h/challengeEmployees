@@ -24,8 +24,8 @@ angular.module("App")
     });
   
   $scope.ingresar = function(){
-    $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-MM-DD');
-    $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-MM-DD');
+    $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-DD-MM');
+    $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-DD-MM');
     var params ={
       data: {
         employee: $scope.employee

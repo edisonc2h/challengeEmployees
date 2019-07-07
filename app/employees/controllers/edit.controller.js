@@ -1,6 +1,5 @@
 angular.module("App")
   .controller("edit", function($scope, $route, $location, employees_model) {
-    console.log($route.current.params)
     $scope.employee = [];
     var params = {
         data: {
@@ -24,8 +23,8 @@ angular.module("App")
     });
 
     $scope.ingresar = function(){
-      $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-MM-DD');
-      $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-MM-DD');
+      $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-DD-MM');
+      $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-DD-MM');
         var params ={
           data: {
             employee: $scope.employee
@@ -33,7 +32,6 @@ angular.module("App")
         }
         employees_model.post('edit_employee', params)
         .then(function(res) {
-          console.log(res)
           if(res.status == 200){
             Swal.fire({
               position: 'top-end',
@@ -52,6 +50,10 @@ angular.module("App")
             })
           }
           });
+      }
+
+      $scope.cancelar = function(){
+        $location.path('/list');
       }
 
   });

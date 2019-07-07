@@ -22,18 +22,29 @@
               <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="names">Nombres</label>
-                    <input type="text" class="form-control" name="names" id="names" placeholder="" required validation ng-model="employee.names">
+                    <input type="text" class="form-control" name="names" id="names" placeholder="" required validation ng-model="employee.names" autocomplete="off">
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="apellidos">Apellidos</label>
-                    <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="" required validation ng-model="employee.surnames">
+                    <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="" required validation ng-model="employee.surnames" autocomplete="off">
                   </div>
                 </div>
         
                 <div class="row">
                     <div class="col-md-6 mb-3">
                       <label for="cedula">C&eacute;dula</label>
-                      <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required validation ng-model="employee.personal_identification">
+                      <input 
+                      type="text" 
+                      class="form-control" 
+                      name="cedula" 
+                      id="cedula" maxlength="13"
+                      id-Card
+                      placeholder="" 
+                      required 
+                      validation 
+                      ng-model="employee.personal_identification"
+                      autocomplete="off"
+                      >
                     </div>
         
                     <div class="col-md-6 mb-3">
@@ -54,23 +65,28 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                       <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                      <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="" ng-model="employee.birth_date">
-                      <div class="invalid-feedback">
-                        Please select a valid country.
-                      </div>
+                      <input 
+                      type="date" 
+                      class="form-control" 
+                      name="fecha_nacimiento" 
+                      id="fecha_nacimiento" 
+                      placeholder="" 
+                      ng-model="employee.birth_date"
+                      >
                     </div>
                     <div class="col-md-6 mb-3">
                       <label for="email">Email <span class="text-muted">(Valida)</span></label>
                       <input 
-                        type="email" 
+                        type="text" 
                         class="form-control" 
                         name="email" 
                         id="email" 
                         placeholder="you@example.com" 
                         ng-model="employee.email"
-                        email 
+                        is-email 
                         required 
                         validation
+                        autocomplete="off"
                         >
                     </div>
                   </div>
@@ -78,10 +94,7 @@
                   <div class="row">
                     <div class="col-md-6 mb-3">
                       <label for="obsercacion_personal">Observaciones</label>
-                      <input type="text" class="form-control" id="observacion" placeholder="Comentario u observacion referente a la ficha personal" ng-model="employee.observation">
-                      <div class="invalid-feedback">
-                        Please select a valid country.
-                      </div>
+                      <input type="text" class="form-control" id="observacion" placeholder="Comentario u observacion referente a la ficha personal" ng-model="employee.observation" autocomplete="off">
                     </div>
                     <div class="col-md-6 mb-3">
                       <label for="imagen">Fotograf&iacute;a </label>
@@ -98,19 +111,16 @@
                   <div class="col-md-6 mb-3">
                     <label for="fecha_ingreso">Fecha de Ingreso</label>
                     <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso" required validation ng-model="employee.start_date" placeholder="">
-                    <div class="invalid-feedback">
-                      Please select a valid date.
-                    </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="cargo">Cargo</label>
-                    <input type="text" class="form-control" required validation id="cargo" name="cargo" placeholder="" ng-model="employee.position">
+                    <input type="text" class="form-control" required validation id="cargo" name="cargo" placeholder="" ng-model="employee.position" autocomplete="off">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="departamento">Departamento</label>
-                    <input type="text" class="form-control" id="departamento" name="departamento" placeholder="" ng-model="employee.department">
+                    <input type="text" class="form-control" id="departamento" name="departamento" placeholder="" ng-model="employee.department" autocomplete="off">
                   </div>
         
                   <div class="col-md-6 mb-3">
@@ -153,19 +163,15 @@
                   <div class="col-md-12 mb-6">
                     <label for="obsercacion_laboral">Observaciones</label>
                     <input type="text" class="form-control" id="obsercacion_laboral" placeholder="Comentario u observacion referente a la ficha laboral" ng-model="employee.labor_observation">
-                    <div class="invalid-feedback">
-                      Please select a valid country.
-                    </div>
                   </div>
                 </div>
-                <br>
-                <div class="row justify-content-md-center">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
-                      <button type="click" class="btn btn-danger">Cancelar</button>
-                </div>
-        
             </div>
             
+          </div>
+          <br>
+          <div class="row justify-content-md-center">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="click" ng-click="cancelar()" class="btn btn-danger">Cancelar</button>
           </div>
         </div>  
         </form>

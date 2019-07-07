@@ -38,7 +38,6 @@ angular.module("App")
   }
 
   $scope.delete_employee = function(employee){
-    console.log(employee)
     Swal.fire({
     title: 'Eliminar?',
     text: "Confirmar accion!",
