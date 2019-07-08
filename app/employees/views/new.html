@@ -22,11 +22,11 @@
       <div class="row">
           <div class="col-md-6 mb-3">
             <label for="names">Nombres</label>
-            <input type="text" class="form-control" name="names" id="names" placeholder="" required validation ng-model="employee.names">
+            <input type="text" class="form-control" name="names" id="names" placeholder="" required validation ng-model="employee.names" autocomplete="off">
           </div>
           <div class="col-md-6 mb-3">
             <label for="apellidos">Apellidos</label>
-            <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="" required validation ng-model="employee.surnames">
+            <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="" required validation ng-model="employee.surnames" autocomplete="off">
           </div>
         </div>
 
@@ -45,6 +45,7 @@
                 validation 
                 ng-model="employee.personal_identification"
                 ng-blur="validar_si_existe_identificacion(employee.personal_identification)"
+                autocomplete="off"
                 >
             </div>
 
@@ -159,7 +160,7 @@
         <div class="row">
           <div class="col-md-12 mb-6">
             <label for="obsercacion_laboral">Observaciones</label>
-            <input type="text" class="form-control" id="obsercacion_laboral" placeholder="Comentario u observacion referente a la ficha laboral" ng-model="employee.labor_observation">
+            <input type="text" class="form-control" id="obsercacion_laboral" placeholder="Comentario u observacion referente a la ficha laboral" ng-model="employee.labor_observation" autocomplete="off">
           </div>
         </div>
     </div>
