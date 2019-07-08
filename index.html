@@ -133,6 +133,7 @@
   <script src="./app/directives/form_validation/is_required.js"></script>
   <script src="./app/directives/valid_id_card.js"></script>
   <script src="./app/directives/validar_email.js"></script>
+  <script src="./app/directives/file_model.js"></script>
 
   <script src="./app/app.module.js"></script>
 
@@ -145,5 +146,20 @@
   <script src="./app/employees/controllers/list.controller.js"></script>
   <script src="./app/employees/controllers/credits.controller.js"></script>
   <script src="./app/employees/controllers/edit.controller.js"></script>
+  <script type="text/javascript">
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#image')
+            .attr('src', e.target.result)
+            .width(150)
+            .height(150);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
 </body>
 </html>

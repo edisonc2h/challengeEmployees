@@ -84,4 +84,14 @@ class Employees extends REST_Controller {
 		$result = $this->Employees_model->validar_identificacion($cedula);
 		$this->response($result, REST_Controller::HTTP_OK);
 	}
+
+	public function guardar_archivo_post()
+    {
+    	$dir_path = dirname(__FILE__) . '/../../../images/';
+    	$dir = opendir($dir_path); 
+    	if ( $dir == false) mkdir ($dir_path, 0777);
+	    $tempPath = $_FILES['file']['tmp_name'];
+	    $uploadPath = $dir_path . str_replace(' ', '', trim($_FILES['file']['name']));
+	    move_uploaded_file($tempPath, $uploadPath);
+    }
 }

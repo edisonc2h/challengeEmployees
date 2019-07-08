@@ -1,5 +1,5 @@
 angular.module("App")
-  .controller("new_employee", function($scope, $route, $location, employees_model, BackendConfig) {
+  .controller("new_employee", function($scope, $route, $location, employees_model, BackendConfig, fileUpload) {
 	$scope.employee = {
     names: '',
     surnames: '',
@@ -18,6 +18,9 @@ angular.module("App")
     labor_observation: ''
   };
 	$scope.provincias = [];
+  $scope.file_model = {
+        value: ''
+      }
   employees_model.get('provincias')
   .then(function(res) {
       $scope.provincias = res.data;
@@ -26,6 +29,13 @@ angular.module("App")
   $scope.ingresar = function(){
     $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-DD-MM');
     $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-DD-MM');
+    var file_name = '';
+      if ($scope.file_model && $scope.file_model.value)  {
+        var file = $scope.file_model.value;
+        file_name = file.name.trim();
+        file_name = file_name.replace(/ /g, '');
+        $scope.employee.image = file_name;
+      }
     var params ={
       data: {
         employee: $scope.employee
@@ -34,6 +44,10 @@ angular.module("App")
     employees_model.post('new_employee', params)
     .then(function(res) {
       if(res.status == 200){
+        if (file_name !== '') {
+            var upload_url = `${BackendConfig.url}/Employees/guardar_archivo`;
+            fileUpload.upload_file_To_url(file, upload_url);
+          }
         Swal.fire({
           position: 'top-end',
           type: 'success',
@@ -78,5 +92,35 @@ angular.module("App")
               }
           });
   }
+
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#file')
+            .attr('src', e.target.result)
+            .width(150)
+            .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
 	
-  });
+  }).service('fileUpload', function($http) {
+
+      this.upload_file_To_url = function(file, upload_url) {
+        var fd = new FormData();
+        fd.append('file', file);
+        $http.post(upload_url, fd, {
+            transformRequest: angular.identity,
+            headers: {
+              'Content-Type': undefined
+            }
+          })
+          .then(function(response) {
+            return response.data.response;
+          });
+      }
+    });
