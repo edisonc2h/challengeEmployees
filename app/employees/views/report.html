@@ -16,7 +16,7 @@ font-size: 10px;
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table ng-table="employeesTable" class="table table-condensed table-bordered table-striped" show-filter="true">
+          <table ng-table="employeesTable" class="table table-condensed table-bordered table-striped" show-filter="false">
           <tr ng-repeat="employee in $data">
             <td data-title="'Nombres'" sortable="'names'">{{employee.names}}</td>
             <td data-title="'Apellidos'" sortable="'surnames'">{{employee.surnames}}</td>
@@ -30,34 +30,6 @@ font-size: 10px;
             <td data-title="'Jornada Parcial'" sortable="'part_time'">{{employee.part_time}}</td>
             <td data-title="'Estado'" sortable="'name_status'">{{employee.name_status}}</td>
           </tr>
-              <!-- <thead>
-                  <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">C&eacute;dula</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Fecha Nacimiento</th>
-                    <th scope="col">Fecha Ingreso</th>
-                    <th scope="col">Cargo</th>
-                    <th scope="col">Departamento</th>
-                    <th scope="col">Sueldo</th>
-                    <th scope="col">Jornada Parcial</th>
-                    <th scope="col">Estado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="employee in employees">
-                    <th>{{employee.names + ' '+ employee.surnames}}</th>
-                    <td>{{employee.personal_identification}}</td>
-                    <td>{{employee.email}}</td>
-                    <td>{{employee.birth_date}}</td>
-                    <td>{{employee.start_date}}</td>
-                    <td>{{employee.position}}</td>
-                    <td>{{employee.department}}</td>
-                    <td>{{employee.salary}}</td>
-                    <td>{{employee.part_time}}</td>
-                    <td>{{employee.name_status}}</td>
-                  </tr>
-                </tbody> -->
           </table>
         </div>
       </div>
