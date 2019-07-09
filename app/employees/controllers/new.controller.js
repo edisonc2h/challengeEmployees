@@ -5,11 +5,11 @@ angular.module("App")
     surnames: '',
     personal_identification: '',
     id_province: '',
-    birth_date: new Date(),
+    birth_date: '',
     email: '',
     observation: '',
     image: '',
-    start_date: new Date(),
+    start_date: ,
     position: '',
     department: '',
     id_working_province: '',
@@ -27,8 +27,8 @@ angular.module("App")
     });
   
   $scope.ingresar = function(){
-    $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-DD-MM');
-    $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-DD-MM');
+    $scope.employee.birth_date = moment($scope.employee.birth_date).format('YYYY-MM-DD');
+    $scope.employee.start_date = moment($scope.employee.start_date).format('YYYY-MM-DD');
     var file_name = '';
       if ($scope.file_model && $scope.file_model.value)  {
         var file = $scope.file_model.value;
